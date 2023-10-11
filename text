@@ -1,0 +1,80 @@
+
+
+Common Terminal Commands
+Let's look at some basic commands to navigating the filesystem and working with files and folders. Terminal commands often use the term directory to refer to folders. The words directory and folder are used interchangeably below.
+
+pwd - Present working directory
+Terminal commands are executed at a specific location in the filesystem, called the working directory (just like "Finder" or "Explorer" applications). When you first launch the terminal, it uses your home directory. You can find the path of the working directory using pwd (short for "present working directory").
+
+$ pwd
+/workspaces/nodejs-scripts
+
+Of course, the output will look different on your computer. Note that the $ is not a part of the command, it simply a part of the terminal prompt.
+
+EXERCISE: Open up a terminal check the present working directory using the pwd command.
+
+cd - Change directory
+You can change to a different working directory using the cd command.
+
+
+$ cd utils
+$ pwd
+/workspaces/nodejs-scripts/utils
+To go back to the parent directory, you can use cd ..
+
+$ cd ..
+$ pwd
+/workspaces/nodejs-scripts
+To return to the home directory, you can use the shortcut cd ~.
+
+$ cd ~
+$ pwd
+You can also use the full path of a directory to navigate to it.
+
+$ cd /workspaces/nodejs-scripts
+$ pwd
+/workspaces/nodejs-scripts
+Try out the above commands with directories on your computer.
+
+EXERCISE: Navigate to different directories on your computer using the cd and pwd commands. Keep an "Explorer" or "Finder" window open on the side to keep track of where you are. They try navigating without the "Explorer" or "Finder" window.
+
+ls - Listing the files in a directory
+Use this command to list the files and directories in a directory. ls is often used immediately after you cd to a directory.
+
+$ cd /workspaces/nodejs-scripts
+$ ls
+README.md  index.js  utils
+To view file details and hidden files, use ls -la
+
+$ ls - la
+total 24
+drwxrwxrwx+ 4 codespace root      4096 Mar 16 06:47 .
+drwxr-xrwx+ 5 codespace root      4096 Mar 16 05:15 ..
+drwxrwxrwx+ 8 codespace root      4096 Mar 16 06:23 .git
+-rw-rw-rw-  1 codespace root        16 Mar 16 05:15 README.md
+-rw-rw-rw-  1 codespace codespace  155 Mar 16 06:24 index.js
+drwxrwxrwx+ 2 codespace codespace 4096 Mar 16 06:47 utils
+You can also include a folder name or path after ls
+
+$ ls utils
+helper.js
+
+To list files recursively use the -R option
+
+$ ls -R
+.:
+README.md  index.js  utils
+
+./utils:
+helper.js
+Warning: The ls -R command can take a long time if you run for a directory with a very large number of files. In such a case, you can interrupt the execution (of any command, not just ls) using Ctrl+C.
+
+Try out the above commands with directories on your computer.
+
+EXERCISE: Explore different files and folders on your computer using the ls and cd commands. Try typing cd / and explore the root of your filesystem.
+
+mkdir - Creating a new directory
+Use this command to create a new directory.
+
+$ mkdir my-folder
+$ ls
